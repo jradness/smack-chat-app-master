@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+:root {
+  --primary: #4A154B;
+  --primary-nav: #3f1140;
+  --lunar: #c8bbc8;
+  --charcoal: #353535;
+  --cloudy: #818181;
+  --sky-blue: #53a1db;
+  --sky-tint: #0e76c4;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+:before,
+:after {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  overflow: hidden;
+  font-family: sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2, h3, h4, h5 { margin: 0; }
+
+.title { margin-bottom: 20px; }
+
+.center-display {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.form {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 30px 20px;
+}
+
+.form label { margin-bottom: 10px; }
+
+.submit-btn {
+  border: 1px solid #2EB67D;
+  background: #2EB67D;
+  width: 100%;
+  border-radius: 5px;
+  padding: 1.25rem 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  transition: ease-in-out 0.3s;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.logout-btn { background: #B33F40; }
+
+.submit-btn:hover { background: #29A370; }
+.logout-btn:hover { background: #973537; }
+
+.submit-btn:hover,
+.logout-btn:hover {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type="text"].disabled {
+  color: white;
+  opacity: 0.6;
+  cursor: no-drop;
+}
+
+.form-control {
+  display: block;
+  margin-bottom: 15px;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: 1px solid var(--charcoal);
+}
+
+.footer-text {
+  padding: 20px;
+}
+
+.footer-text a { text-decoration: none; }
+.footer-text a:hover { text-decoration: underline; }
+
+.alert.alert-danger {
+  color: #721C24;
+  background-color: #F8D7DA;
+  border-color: #F5C6CB;
+  border-left: 5px solid #CC0000;
 }
