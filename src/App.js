@@ -16,7 +16,6 @@ const chatService = new ChatService(authService.getBearerHeader);
 const socketService = new SocketService(chatService);
 export const UserContext = createContext();
 const AuthProvider = ({ children }) => {
-  console.log('AUTHPROVIDER');
   const context = {
     authService,
     chatService,
@@ -39,7 +38,6 @@ const AuthProvider = ({ children }) => {
 
 const PrivateRoute = ({ children, ...props }) => {
   const context = useContext(UserContext)
-  console.log("Private Route");
   return (
     <Route {...props} render={({ location }) => context.authService.isLoggedIn 
       ? (children)
@@ -50,9 +48,7 @@ const PrivateRoute = ({ children, ...props }) => {
 }
 
 function App() {
-  console.log('APP');
   return (
-
     <AuthProvider>
       <Router>
         <Switch>
