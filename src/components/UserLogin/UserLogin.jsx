@@ -5,7 +5,6 @@ import Alert from '../Alert/Alert';
 
 
 const UserLogin = ({ location, history }) => {
-  console.log('UserLogin');
   const { authService } = useContext(UserContext);
   const [userLogins, setUserLogins] = useState({ email: '', password: '' });
   const [error, setError] = useState(false);
